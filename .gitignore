@@ -1,0 +1,13 @@
+# Ignorar directorio data
+/data/
+
+# Ignorar archivos de log
+*.log
+
+# Ignorar archivos temporales de sistema
+*.tmp
+*.swp
+
+# Ignorar archivos de configuración de IDE
+.vscode/
+.idea/
