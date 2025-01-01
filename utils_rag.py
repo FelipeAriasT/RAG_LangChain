@@ -3,11 +3,9 @@ from IPython.display import Image, display
 import fitz
 import matplotlib.patches as patches
 import matplotlib.pyplot as plt
-from PIL import Image # quizas este error 
+from PIL import Image as Image2 # quizas este error 
 from langchain_core.documents import Document
 
-import base64
-from IPython.display import Image, display
 
 def display_base64_image(base64_code):
     # Decode the base64 string to binary
@@ -38,7 +36,7 @@ def data_general(chunks):
 
 def plot_pdf_with_boxes(pdf_page, segments) :
   pix = pdf_page.get_pixmap()
-  pil_image = Image.frombytes ("RGB", [pix.width, pix.height], pix.samples)
+  pil_image = Image2.frombytes ("RGB", [pix.width, pix.height], pix.samples)
   fig, ax = plt.subplots(1, figsize=(10, 10))
   ax. imshow (pil_image)
   categories = set()
