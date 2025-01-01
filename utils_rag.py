@@ -6,23 +6,34 @@ import matplotlib.pyplot as plt
 from PIL import Image
 from langchain_core.documents import Document
 
-def get_images_base64(chunks):
-    images_b64 = []
-    for chunk in chunks:
-        if "CompositeElement" in str(type(chunk)):
-            chunk_els = chunk.metadata.orig_elements
-            for el in chunk_els:
-                if "Image" in str(type(el)):
-                    images_b64.append(el.metadata.image_base64)
-    return images_b64
-
-
+import base64
+from IPython.display import Image, display
 
 def display_base64_image(base64_code):
     # Decode the base64 string to binary
     image_data = base64.b64decode(base64_code)
     # Display the image
     display(Image(data=image_data))
+
+
+def data_general(chunks):
+    # separate tables from texts
+    tables = []
+    texts = []
+    images_b64 = []
+    for chunk in chunks:
+        if "Table" in str(type(chunk)):
+            tables.append(chunk)
+
+        if "CompositeElement" in str(type((chunk))):
+            texts.append(chunk)
+            chunk_els = chunk.metadata.orig_elements
+            for el in chunk_els:
+                if "Image" in str(type(el)):
+                    images_b64.append(el.metadata.image_base64)
+    
+    return tables, texts, images_b64
+
 
 
 def plot_pdf_with_boxes(pdf_page, segments) :
@@ -74,7 +85,7 @@ def render_page(doc_list: list, page_number: int,file_path, print_text=True) -> 
       print(f"{doc. page_content}\n" )
 
 
-      from langchain_core.documents import Document
+from langchain_core.documents import Document
 
 def extract_page_numbers_from_chunks(chunk):
   
