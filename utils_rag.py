@@ -3,7 +3,7 @@ from IPython.display import Image, display
 import fitz
 import matplotlib.patches as patches
 import matplotlib.pyplot as plt
-from PIL import Image
+from PIL import Image # quizas este error 
 from langchain_core.documents import Document
 
 import base64
