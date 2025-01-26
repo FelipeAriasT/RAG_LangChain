@@ -1,0 +1,8 @@
+langchain-ollama
+"unstructured[all-docs]" 
+pillow 
+lxml 
+pillow 
+python_dotenv
+langchain-core
+PyMuPDF

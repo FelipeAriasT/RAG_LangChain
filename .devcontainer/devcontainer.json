@@ -1,0 +1,17 @@
+// filepath: /Users/felipearias/Desktop/Repositorios/RAG_LangChain/.devcontainer/devcontainer.json
+{
+  "name": "unstructured2",
+  "build": {
+    "dockerfile": "../Dockerfile"
+  },
+  "extensions": [
+    "ms-python.python",
+    "ms-vscode-remote.remote-containers",
+    "ms-azuretools.vscode-docker",
+    "formulahendry.code-runner",
+    //"GitHub.copilot",
+    "ms-toolsai.jupyter"
+  ],
+  "postCreateCommand": "pip install --upgrade pip && pip install ipykernel"
+
+}
