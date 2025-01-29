@@ -5,6 +5,7 @@ import matplotlib.patches as patches
 import matplotlib.pyplot as plt
 from PIL import Image as Image2 
 from langchain_core.documents import Document
+
 from unstructured.partition.pdf import partition_pdf
 from unstructured.staging.base import dict_to_elements, elements_to_json
 import json
